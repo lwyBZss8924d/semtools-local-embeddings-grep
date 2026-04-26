@@ -4,7 +4,7 @@ Branch: feature/jina-jgrep-local-fork
 
 Upstream base: fe7f6d260fdc0128768fcfea0e8d624d6f304739
 
-Local install expectation: cargo install --path /Users/arthur/dev-space/semtools --force
+Local install expectation: cargo install --path . --force
 
 Skills source: skills/semtools-skills-collection/
 

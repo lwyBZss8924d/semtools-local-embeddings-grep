@@ -1,0 +1,7 @@
+Repository contributor guide closeout
+
+Commit adds root AGENTS.md titled Repository Guidelines.
+
+Scope: concise contributor guidance for project structure, cargo commands, rustfmt style, test expectations, commit/PR conventions, and security/configuration tips.
+
+Validation: wc -w AGENTS.md => 383 words; git diff --cached --check passed before commit.

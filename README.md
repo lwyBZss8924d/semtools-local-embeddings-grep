@@ -69,6 +69,28 @@ semtools jgrep --help
 semtools jgrep --models-status --json
 ```
 
+### Supported Jina Models
+
+This fork projects the primary local model information from the Jina grep CLI model matrix and the Hugging Face model cards into `semtools jgrep`. The current runtime targets the MLX checkpoint repositories listed below, while executing them through the Rust-native local runtime in this crate.
+
+| Model | Params | Dims | Max Seq | Matryoshka dims | Tasks |
+|-------|--------|------|---------|-----------------|-------|
+| `jina-embeddings-v5-small` | 677M | 1024 | 32768 | 32, 64, 128, 256, 512, 768, 1024 | `retrieval`, `text-matching`, `clustering`, `classification` |
+| `jina-code-embeddings-1.5b` | 1.54B | 1536 | 32768 | 128, 256, 512, 1024, 1536 | `nl2code`, `code2code`, `code2nl`, `code2completion`, `qa` |
+
+HF model-card details for the MLX repos:
+
+- `jina-embeddings-v5-small` resolves to [`jinaai/jina-embeddings-v5-text-small-mlx`](https://huggingface.co/jinaai/jina-embeddings-v5-text-small-mlx). The card describes it as an MLX multi-task checkpoint for `jina-embeddings-v5-text-small`, using a Qwen3-0.6B base with task-specific LoRA adapters (`r=32`, `alpha=32`) for retrieval, text matching, clustering, and classification. The repo stores the shared base weights plus task adapters under `adapters/<task>/`; the card lists about 1.1GB of base weights plus four 38MB adapters, or about 1.3GB total for all tasks.
+- `jina-code-embeddings-1.5b` resolves to [`jinaai/jina-code-embeddings-1.5b-mlx`](https://huggingface.co/jinaai/jina-code-embeddings-1.5b-mlx). The card describes it as an MLX port of the Jina code embedding model, based on Qwen2.5-Coder-1.5B, optimized for code retrieval across 15+ programming languages. Code tasks use task-specific query and passage instruction prefixes. The repo ships `model.safetensors`, `config.json`, `tokenizer.json`, `tokenizer_config.json`, `vocab.json`, and `merges.txt`.
+- Both model cards use `pipeline_tag: feature-extraction`, `library_name: mlx`, safetensors weights, and `license: cc-by-nc-4.0`. Treat the license as non-commercial unless you have separate rights.
+- `semtools jgrep --models-status --json` verifies the required local files `config.json`, `tokenizer.json`, and `model.safetensors`; v5 task adapters are loaded from the MLX repo layout when present.
+
+`semtools jgrep` defaults to `jina-embeddings-v5-small` with the `retrieval` task for text search and reranking. Use the code model explicitly for code search:
+
+```bash
+semtools jgrep --model jina-code-embeddings-1.5b --task nl2code "HTTP retry with backoff" src --recursive --include '*.rs'
+```
+
 ## Quick Start
 
 Basic Usage:

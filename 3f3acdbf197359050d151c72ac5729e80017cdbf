@@ -2,6 +2,6 @@ Publication path sanitization closeout
 
 Commit removes personal absolute paths from README, AGENTS.md, docs, examples, benchmark transcripts, and repository-owned semtools skills.
 
-Scan patterns cleared in tracked files: /Users/, arthur, loganmarkewich, jerryliu, ~/dev-space, dev-space/semtools.
+Tracked-file and note scans now pass for macOS home absolute paths, contributor usernames, and old local checkout path wording.
 
 Existing Jina fork note was also rewritten to use cargo install --path . --force.

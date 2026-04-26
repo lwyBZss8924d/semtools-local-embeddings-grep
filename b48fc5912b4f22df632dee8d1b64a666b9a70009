@@ -1,0 +1,11 @@
+Local semtools Jina fork closeout
+
+Branch: feature/jina-jgrep-local-fork
+
+Upstream base: fe7f6d260fdc0128768fcfea0e8d624d6f304739
+
+Local install expectation: cargo install --path /Users/arthur/dev-space/semtools --force
+
+Skills source: skills/semtools-skills-collection/
+
+Validation: cargo fmt --check; cargo test --all-features => 50 library tests, 0 bin tests, 0 doctests passed; cargo test --no-default-features --features parse,search,workspace,ask => 39 library tests, 0 bin tests, 0 doctests passed; cargo run --quiet -- jgrep --models-status --json => jina-embeddings-v5-small available true with no missing files; pipe rerank smoke => type jina_grep_results, backend rust_native_jina, mode pipe.

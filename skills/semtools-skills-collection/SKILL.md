@@ -8,8 +8,8 @@ metadata:
 
 # Semtools Skills Collection
 
-Custom collection for semtools CLI workflows backed by the local source tree at `~/dev-space/semtools`.
-The active workstation command is the local-source Cargo build installed into `~/.cargo/bin/semtools` with `cargo install --path /Users/arthur/dev-space/semtools --force`, not the crates.io default package.
+Custom collection for semtools CLI workflows backed by this repository's local source tree.
+The active workstation command is the local-source Cargo build installed into `~/.cargo/bin/semtools` with `cargo install --path . --force` from the repository root, not the crates.io default package.
 
 ## Skills
 

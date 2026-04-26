@@ -272,12 +272,12 @@ Without `search`:
      ☐ Search chronologically for first appearances of key terms
      ☐ Report findings with earliest dates for each term
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000
+⏺ Bash(find benchmarks/arxiv/arxiv_dataset_1000
       _papers/by_date -name "*.txt" | sort | head -20 | xargs grep -H
       "^TITLE:" | head -20)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20277v2_fulltext.txt:TITLE: OmniCharacter:
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +55 lines (ctrl+r to expand)
 
 
@@ -285,7 +285,7 @@ Without `search`:
 ⏺ Now let me get the complete chronological list and search for specific
   technical terms.
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000
+⏺ Bash(find benchmarks/arxiv/arxiv_dataset_1000
       _papers/by_date -name "*.txt" | sort | xargs grep -H "^TITLE:" >
       /tmp/all_titles_chronolo…)
   ⎿  (No content)
@@ -300,9 +300,9 @@ Without `search`:
 ⏺ Bash(grep -i -E "(transformer|attention|bert|gpt|llm|diffusion|gan|vae|cnn|r
       nn|lstm|reinforcement|federated|neural network|deep learning|machine
       learning|ai|artifici…)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20277v2_fulltext.txt:TITLE: OmniCharacter:
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +55 lines (ctrl+r to expand)
 
 
@@ -313,7 +313,7 @@ Without `search`:
 ⏺ Bash(echo "=== TRANSFORMER ===" && grep -i "transformer"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === TRANSFORMER ===                                                       
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20481v1_fulltext.txt:TITLE: CardioPatternFormer: Patt
     … +10 lines (ctrl+r to expand)
 
@@ -322,7 +322,7 @@ Without `search`:
 ⏺ Bash(echo "=== DIFFUSION ===" && grep -i "diffusion"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === DIFFUSION ===                                                         
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20297v1_fulltext.txt:TITLE: DiSA: Diffusion Step Anne
     … +8 lines (ctrl+r to expand)
 
@@ -331,7 +331,7 @@ Without `search`:
 ⏺ Bash(echo "=== LLM/LARGE LANGUAGE MODEL ===" && grep -i -E "(llm|large
       language model)" /tmp/all_titles_chronological.txt | head -3)
   ⎿ === LLM/LARGE LANGUAGE MODEL ===                                          
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20416v1_fulltext.txt:TITLE: GraphGen: Enhancing Super
     … +7 lines (ctrl+r to expand)
 
@@ -340,7 +340,7 @@ Without `search`:
 ⏺ Bash(echo "=== FEDERATED LEARNING ===" && grep -i "federated"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === FEDERATED LEARNING ===                                                
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20456v1_fulltext.txt:TITLE: Federated Learning-Distil
     … +7 lines (ctrl+r to expand)
 
@@ -350,7 +350,7 @@ Without `search`:
       "(gan|generative adversarial)" /tmp/all_titles_chronological.txt | head
       -3)
   ⎿ === GAN/GENERATIVE ADVERSARIAL ===                                        
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20277v2_fulltext.txt:TITLE: OmniCharacter:
     … +6 lines (ctrl+r to expand)
 
@@ -359,7 +359,7 @@ Without `search`:
       "(vision-language|vision language|vlm)"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === VISION-LANGUAGE MODEL ===                                             
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20279v2_fulltext.txt:TITLE: VLM-3R: Vision-Language M
     … +8 lines (ctrl+r to expand)
 
@@ -368,7 +368,7 @@ Without `search`:
 ⏺ Bash(echo "=== REINFORCEMENT LEARNING ===" && grep -i "reinforcement"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === REINFORCEMENT LEARNING ===                                            
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-06/2506.09942v1_fulltext.txt:TITLE: VerIF: Verification Engin
     … +8 lines (ctrl+r to expand)
 
@@ -377,7 +377,7 @@ Without `search`:
 ⏺ Bash(echo "=== ATTENTION ===" && grep -i "attention"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === ATTENTION ===                                                         
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20454v1_fulltext.txt:TITLE: BlastOFormer: Attention a
     … +8 lines (ctrl+r to expand)
 
@@ -388,7 +388,7 @@ Without `search`:
 ⏺ Bash(echo "=== NEURAL NETWORK ===" && grep -i "neural"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === NEURAL NETWORK ===                                                    
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20454v1_fulltext.txt:TITLE: BlastOFormer: Attention a
     … +7 lines (ctrl+r to expand)
 
@@ -397,7 +397,7 @@ Without `search`:
 ⏺ Bash(echo "=== AUTOENCODER ===" && grep -i "autoencoder"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === AUTOENCODER ===                                                       
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-05/2505.20535v1_fulltext.txt:TITLE: Rotary Masked Autoencoder
     … +8 lines (ctrl+r to expand)
 
@@ -406,7 +406,7 @@ Without `search`:
 ⏺ Bash(echo "=== SELF-SUPERVISED ===" && grep -i "self-supervised"
       /tmp/all_titles_chronological.txt | head -3)
   ⎿ === SELF-SUPERVISED ===                                                   
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-06/2506.09785v1_fulltext.txt:TITLE: A theoretical framework f
     … +7 lines (ctrl+r to expand)
 

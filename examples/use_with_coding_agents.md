@@ -55,10 +55,10 @@ Below is the full trace from Claude-Code, which demonstrates it's ability to use
 │                                                                │
 │   /help for help, /status for your current setup               │
 │                                                                │
-│   cwd: /Users/loganmarkewich/filesystem-index/acl_papers_2023  │
+│   cwd: ./acl_papers_2023                                      │
 ╰────────────────────────────────────────────────────────────────╯
 
-> Currently you are in a directory full of PDF files containing papers from ACL 2023. Can you summarize the findings from these papers that 
+> Currently you are in a directory full of PDF files containing papers from ACL 2023. Can you summarize the findings from these papers that
   discuss LLMs and evals?
 
 ⏺ I'll help you summarize findings from ACL 2023 papers about LLMs and evaluations. Let me first explore the directory structure and then
@@ -83,9 +83,9 @@ Below is the full trace from Claude-Code, which demonstrates it's ability to use
   discussing LLMs and evaluations.
 
 ⏺ Bash(semtools parse *.pdf)
-  ⎿  /Users/loganmarkewich/.parse/2023.acl-long.0.pdf.md 
-     /Users/loganmarkewich/.parse/2023.acl-long.1.pdf.md
-     /Users/loganmarkewich/.parse/2023.acl-long.10.pdf.md
+  ⎿  ~/.parse/2023.acl-long.0.pdf.md
+     ~/.parse/2023.acl-long.1.pdf.md
+     ~/.parse/2023.acl-long.10.pdf.md
      … +556 lines (ctrl+r to expand)
 
 ⏺ Update Todos
@@ -106,7 +106,7 @@ Below is the full trace from Claude-Code, which demonstrates it's ability to use
 
 ⏺ Bash(semtools parse *.pdf | xargs cat | semtools search "GPT, BERT, language model evaluation, performance evaluation, model comparison" --n-lines 5
       --max-distance 0.35)
-  ⎿  <stdin>:244769::244780 (0.2719643874147169)                                                             
+  ⎿  <stdin>:244769::244780 (0.2719643874147169)
      244770: <td>
      244771: - Reference-free and reference-based human evaluation results have a near-zero correlation.<br/>
      … +630 lines (ctrl+r to expand)
@@ -114,7 +114,7 @@ Below is the full trace from Claude-Code, which demonstrates it's ability to use
 ⏺ Now let me search for specific types of evaluation studies and findings:
 
 ⏺ Bash(semtools parse *.pdf | xargs cat | semtools search "robustness, bias, fairness, hallucination, reliability" --n-lines 4 --max-distance 0.3)
-  ⎿  Using cached result for: 2023.acl-long.0.pdf 
+  ⎿  Using cached result for: 2023.acl-long.0.pdf
      Using cached result for: 2023.acl-long.1.pdf
      Using cached result for: 2023.acl-long.10.pdf
      … +639 lines (ctrl+r to expand)
@@ -130,7 +130,7 @@ Below is the full trace from Claude-Code, which demonstrates it's ability to use
 ⏺ Let me search for paper titles and abstracts to get a better understanding of the specific papers discussing LLM evaluation:
 
 ⏺ Bash(semtools parse *.pdf | xargs cat | semtools search "Abstract" --n-lines 10 | grep -A 10 -B 2 -i "large language model\|evaluation\|benchmark\|GPT\|BERT")
-  ⎿  <stdin>:94456::94477 (0.00000000009809730805202874)                    
+  ⎿  <stdin>:94456::94477 (0.00000000009809730805202874)
      94457:   Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought
      94458:                 Reasoning by Large Language Models
      … +628 lines (ctrl+r to expand)
@@ -192,13 +192,13 @@ Below is the full trace from Claude-Code, which demonstrates it's ability to use
 
   Implications for the Field
 
-  The research reveals that evaluation of LLMs in 2023 was transitioning from simple accuracy metrics to more nuanced, robust, and 
+  The research reveals that evaluation of LLMs in 2023 was transitioning from simple accuracy metrics to more nuanced, robust, and
   comprehensive assessment methods. There's growing recognition that traditional benchmarks may be insufficient for evaluating the complex
   capabilities and failure modes of large language models, leading to increased focus on robustness, multilingual capabilities, and real-world
    applicability.
 ```
 
-This run cost $0.68 and took about 4 minutes. Not bad for researching across 900+ papers! 
+This run cost $0.68 and took about 4 minutes. Not bad for researching across 900+ papers!
 
 ## Tips
 

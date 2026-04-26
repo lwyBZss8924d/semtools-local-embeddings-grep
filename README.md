@@ -55,7 +55,7 @@ Note: Installing from npm builds the Rust binaries locally during install if a p
 This repository is also maintained as a local enhanced fork. On this workstation, the active `semtools` command is expected to be installed from this source tree:
 
 ```bash
-cargo install --path /Users/arthur/dev-space/semtools --force
+cargo install --path . --force
 ```
 
 That local-source install is distinct from the upstream npm or crates.io package. The fork adds the `semtools jgrep` subcommand, which provides the local `jina-grep` / `jina-semsearch` style surface as a semtools subcommand rather than as separate PATH-default binaries.
@@ -158,7 +158,7 @@ semtools workspace prune
 # You can see the stats of a workspace at any time
 semtools workspace status
 > Active workspace: arxiv
-> Root: /Users/loganmarkewich/.semtools/workspaces/arxiv
+> Root: ~/.semtools/workspaces/arxiv
 > Documents: 3000
 > Index: Yes (IVF_PQ)
 ```

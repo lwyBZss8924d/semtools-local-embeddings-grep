@@ -9,7 +9,7 @@ The upstream `semtools search` command remains the lightweight model2vec search 
 Install this fork from the local source tree:
 
 ```bash
-cargo install --path /Users/arthur/dev-space/semtools --force
+cargo install --path . --force
 ```
 
 Check that the active command is the local fork and that the default Jina model is available:

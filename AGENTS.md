@@ -13,7 +13,7 @@ This is a Rust 2024 CLI crate. The binary entrypoint is `src/bin/semtools.rs`; r
 - `cargo test --all-features`: run the full test suite.
 - `cargo test --no-default-features --features parse,search,workspace,ask`: verify the upstream-style feature set still builds without Jina.
 
-Use `cargo install --path /Users/arthur/dev-space/semtools --force` when refreshing the workstation-local binary.
+Use `cargo install --path . --force` from the repository root when refreshing the workstation-local binary.
 
 ## Coding Style & Naming Conventions
 

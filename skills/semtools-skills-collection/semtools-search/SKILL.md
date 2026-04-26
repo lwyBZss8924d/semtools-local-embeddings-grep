@@ -24,7 +24,7 @@ Useful options:
 
 ## Enhanced Jina jgrep surface
 
-The workstation `semtools` binary is built from `~/dev-space/semtools` and includes:
+The workstation `semtools` binary can be built from this repository and includes:
 
 ```bash
 semtools jgrep [OPTIONS] [PATTERN] [FILES]...

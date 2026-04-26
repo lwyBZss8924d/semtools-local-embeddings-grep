@@ -309,7 +309,7 @@ Without `search`:
      ☐ Identify emerging research patterns
      ☐ Summarize key emerging themes
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000
+⏺ Bash(find benchmarks/arxiv/arxiv_dataset_1000
       _papers/by_date/2025-08 -name "*.txt" | wc -l)
   ⎿  339
 

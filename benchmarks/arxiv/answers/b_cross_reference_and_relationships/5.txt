@@ -310,9 +310,9 @@ Without `search`:
 
 ⏺ Now I'll look for computer vision categories to understand the CV/NLP domains better:
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_category -name "*cv*" -o -name
+⏺ Bash(find benchmarks/arxiv/arxiv_dataset_1000_papers/by_category -name "*cv*" -o -name
       "*CV*" -o -name "*vision*" -o -name "*image*" |…)
-  ⎿  /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_category/cs.CV
+  ⎿  benchmarks/arxiv/arxiv_dataset_1000_papers/by_category/cs.CV
 
 ⏺ List(by_category/cs.CV)
   ⎿  Listed 190 paths (ctrl+r to expand)
@@ -326,7 +326,7 @@ Without `search`:
      ☐ Extract author collaboration networks from cross-domain papers
      ☐ Analyze collaboration patterns and generate insights
 
-⏺ Bash(cd /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_category && comm -12 <(ls cs.CV/ |
+⏺ Bash(cd benchmarks/arxiv/arxiv_dataset_1000_papers/by_category && comm -12 <(ls cs.CV/ |
       sort) <(ls cs.CL/ | sort) | head -20)
   ⎿  2505.20277v2_fulltext.txt     
      2505.20279v2_fulltext.txt

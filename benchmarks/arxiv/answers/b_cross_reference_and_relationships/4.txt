@@ -17,7 +17,7 @@ With `search`:
 ⏺ List(by_author/Yang_Yang)
   ⎿  Listed 9 paths (ctrl+r to expand)
 
-⏺ Bash(for file in /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/*.txt; do
+⏺ Bash(for file in benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/*.txt; do
       echo "=== $(basename $file) ==="; head -10 "…)
   ⎿  === 2506.22362v1_fulltext.txt ===                                           
      TITLE: DiffSoundStream: Efficient Speech Tokenization via Diffusion Decoding
@@ -26,9 +26,9 @@ With `search`:
 ⏺ Let me get more details about Yang_Yang's research by searching for abstracts and key content:
 
 ⏺ Bash(search "abstract"
-      /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/*.txt --n-lines 10
+      benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/*.txt --n-lines 10
       --max-distance 0.2)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/2506.22362v1_fulltext.txt
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/2506.22362v1_fulltext.txt
     :21::42 (0.18237596758280072)
       22: Craig
     … +363 lines (ctrl+r to expand)
@@ -43,7 +43,7 @@ With `search`:
 ⏺ Now let me analyze the dates to understand when Yang_Yang's papers were published:
 
 ⏺ Bash(echo "Yang_Yang's publication timeline:"; for file in
-      /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/*.txt; do da…)
+      benchmarks/arxiv/arxiv_dataset_1000_papers/by_author/Yang_Yang/*.txt; do da…)
   ⎿  Yang_Yang's publication timeline:   
        2506.22362v1_fulltext.txt: 2506-22
        2507.09588v1_fulltext.txt: 2507-09
@@ -59,35 +59,35 @@ With `search`:
      ☐ Compare Yang_Yang's research themes with contemporaneous papers
 
 ⏺ Bash(search "RAG retrieval"
-      /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/*.txt
-      /Users/loganmarkewich/semtools/benchmarks…)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-08/2508.10677v1_fulltext.txt:45:
+      benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/*.txt
+      benchmarks…)
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-08/2508.10677v1_fulltext.txt:45:
     :56 (0.2777155042048817)
       46:
     … +120 lines (ctrl+r to expand)
 
 
-⏺ Bash(search "LLM agent" /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/*.txt
-      /Users/loganmarkewich/semtools/benchmarks/arx…)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-08/2508.10836v1_fulltext.txt:625
+⏺ Bash(search "LLM agent" benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/*.txt
+      benchmarks/arx…)
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-08/2508.10836v1_fulltext.txt:625
     ::636 (0.06542380618373363)
      626:
     … +117 lines (ctrl+r to expand)
 
 
 ⏺ Bash(search "speech tokenization diffusion"
-      /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-06/*.txt
-      /Users/loganmarkewich/sem…)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-06/2506.22362v1_fulltext.txt:29:
+      benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-06/*.txt
+      benchmarks…)
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-06/2506.22362v1_fulltext.txt:29:
     :40 (0.19794855211255363)
       30: {yanghm, yunpeng, gsung, shaofu, dooleyc, centazzo, ramanan}@google.com
     … +104 lines (ctrl+r to expand)
 
 
 ⏺ Bash(search "enterprise security"
-      /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/*.txt
-      /Users/loganmarkewich/semtools/benc…)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/2507.09588v1_fulltext.txt:191
+      benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/*.txt
+      benc…)
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/2507.09588v1_fulltext.txt:191
     ::202 (0.384900368300413)
      192:
     … +125 lines (ctrl+r to expand)
@@ -208,11 +208,11 @@ Without `search`:
 
 ⏺ Now let me check the publication dates by looking at the by_date folders:
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date -name "*2506.22362*" -o -name
+⏺ Bash(find benchmarks/arxiv/arxiv_dataset_1000_papers/by_date -name "*2506.22362*" -o -name
        "*2507.09588*" -o -name "*2507.09592*" -o -…)
-  ⎿  /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-06/2506.22362v1_fulltext.txt
-     /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-08/2508.10701v1_fulltext.txt
-     /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/2507.09592v3_fulltext.txt
+  ⎿  benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-06/2506.22362v1_fulltext.txt
+     benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-08/2508.10701v1_fulltext.txt
+     benchmarks/arxiv/arxiv_dataset_1000_papers/by_date/2025-07/2507.09592v3_fulltext.txt
      … +2 lines (ctrl+r to expand)
 
 ⏺ Update Todos

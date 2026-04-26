@@ -248,21 +248,21 @@ Without `search`:
 
 ⏺ Let me check what files are actually available and verify the structure:
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000
+⏺ Bash(find benchmarks/arxiv/arxiv_dataset_1000
       _papers -name "*_fulltext.txt" | head -10)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     by_date/2025-06/2506.09765v1_fulltext.txt
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +17 lines (ctrl+r to expand)
 
 
 
 ⏺ Let me try a simple pattern search across the abstracts:
 
-⏺ Bash(grep -l -i "multimodal\|multi-modal" /Users/loganmarkewich/semtools/ben
+⏺ Bash(grep -l -i "multimodal\|multi-modal" ben
       chmarks/arxiv/arxiv_dataset_1000_papers/full_text/*_fulltext.txt
       2>/dev/null | head -10)
-  ⎿ (eval):1: no matches found: /Users/loganmarkewich/semtools/benchmarks/arxi
+  ⎿ (eval):1: no matches found: benchmarks/arxi
     v/arxiv_dataset_1000_papers/full_text/*_fulltext.txt
 
 
@@ -275,31 +275,31 @@ Without `search`:
   extension, not _fulltext.txt. Let me search for papers with similar concepts
    using the correct path:
 
-⏺ Bash(grep -l -i "multimodal\|multi-modal" /Users/loganmarkewich/semtools/ben
+⏺ Bash(grep -l -i "multimodal\|multi-modal" ben
       chmarks/arxiv/arxiv_dataset_1000_papers/full_text/*.txt 2>/dev/null |
       head -10)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     full_text/2505.20277v2.txt
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +17 lines (ctrl+r to expand)
 
 
 
-⏺ Bash(grep -l -i "graph.*learning" /Users/loganmarkewich/semtools/benchmarks/
+⏺ Bash(grep -l -i "graph.*learning" benchmarks/
       arxiv/arxiv_dataset_1000_papers/full_text/*.txt 2>/dev/null | head -10)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     full_text/2505.20278v1.txt
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +17 lines (ctrl+r to expand)
 
 
 
-⏺ Bash(grep -l -i "large language model\|LLM" /Users/loganmarkewich/semtools/b
+⏺ Bash(grep -l -i "large language model\|LLM" b
       enchmarks/arxiv/arxiv_dataset_1000_papers/full_text/*.txt 2>/dev/null |
       head -10)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     full_text/2505.20277v2.txt
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +17 lines (ctrl+r to expand)
 
 
@@ -319,20 +319,20 @@ Without `search`:
 
 ⏺ Bash(grep -l -i "multimodal.*graph\|graph.*multimodal\|multi-modal.*graph\|g
       raph.*multi-modal"
-      /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_pap…)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+      benchmarks/arxiv/arxiv_dataset_1000_pap…)
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     full_text/2505.20291v1.txt
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +137 lines (ctrl+r to expand)
 
 
 
 ⏺ Bash(grep -l -i "graph.*LLM\|LLM.*graph\|graph.*large language\|large
-      language.*graph" /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_d
+      language.*graph" benchmarks/arxiv/arxiv_d
       ataset_1000_papers/full…)
-  ⎿ /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+  ⎿ benchmarks/arxiv/arxiv_dataset_1000_papers/
     full_text/2505.20277v2.txt
-    /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_dataset_1000_papers/
+    benchmarks/arxiv/arxiv_dataset_1000_papers/
     … +275 lines (ctrl+r to expand)
 
 

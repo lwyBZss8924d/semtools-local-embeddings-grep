@@ -110,13 +110,13 @@ $ python ./agent.py
 Calling tool execute_bash({'command': 'find . -name "*.pdf" | head -10'})
 Calling tool execute_bash({'command': 'find . -name "*.pdf" | wc -l'})
 Calling tool execute_bash({'command': 'find . -name "*.pdf" | xargs semtools parse'})
-Calling tool execute_bash({'command': 'find /Users/loganmarkewich/.parse -name "*.md" | xargs semtools search "large language model, LLM, evaluation, benchmark" --top-k 10 --n-lines 5'})
-Calling tool execute_bash({'command': 'find /Users/loganmarkewich/.parse -name "*.md" | xargs semtools search "GPT, ChatGPT, instruction tuning, evaluation benchmark, model evaluation" --top-k 15 --n-lines 4'})
-Calling tool execute_bash({'command': 'find /Users/loganmarkewich/.parse -name "*.md" | xargs semtools search "human evaluation, automatic evaluation, BLEU, ROUGE, BERTScore, evaluation metric" --top-k 10 --n-lines 4'})
-Calling tool execute_bash({'command': 'find /Users/loganmarkewich/.parse -name "*.md" | xargs semtools search "scaling laws, emergent abilities, few-shot learning, in-context learning, prompt engineering" --top-k 10 --n-lines 4'})
-Calling tool execute_bash({'command': 'find /Users/loganmarkewich/.parse -name "*.md" | xargs semtools search "title, abstract" --top-k 5 --n-lines 10 | head -50'})
-Calling tool execute_bash({'command': 'find /Users/loganmarkewich/.parse -name "*.md" | xargs semtools search "# " --top-k 20 --n-lines 2 | grep -E "(LLM|evaluation|benchmark|GPT|language model)" | head -20'})
-Calling tool execute_bash({'command': 'find /Users/loganmarkewich/.parse -name "*.md" | head -5 | xargs -I {} sh -c \'echo "=== {} ===" && head -20 "{}"\''})
+Calling tool execute_bash({'command': 'find ~/.parse -name "*.md" | xargs semtools search "large language model, LLM, evaluation, benchmark" --top-k 10 --n-lines 5'})
+Calling tool execute_bash({'command': 'find ~/.parse -name "*.md" | xargs semtools search "GPT, ChatGPT, instruction tuning, evaluation benchmark, model evaluation" --top-k 15 --n-lines 4'})
+Calling tool execute_bash({'command': 'find ~/.parse -name "*.md" | xargs semtools search "human evaluation, automatic evaluation, BLEU, ROUGE, BERTScore, evaluation metric" --top-k 10 --n-lines 4'})
+Calling tool execute_bash({'command': 'find ~/.parse -name "*.md" | xargs semtools search "scaling laws, emergent abilities, few-shot learning, in-context learning, prompt engineering" --top-k 10 --n-lines 4'})
+Calling tool execute_bash({'command': 'find ~/.parse -name "*.md" | xargs semtools search "title, abstract" --top-k 5 --n-lines 10 | head -50'})
+Calling tool execute_bash({'command': 'find ~/.parse -name "*.md" | xargs semtools search "# " --top-k 20 --n-lines 2 | grep -E "(LLM|evaluation|benchmark|GPT|language model)" | head -20'})
+Calling tool execute_bash({'command': 'find ~/.parse -name "*.md" | head -5 | xargs -I {} sh -c \'echo "=== {} ===" && head -20 "{}"\''})
 Based on my analysis of the ACL 2023 papers, I can now provide a comprehensive summary of the key findings about LLMs and evaluations:
 
 # Summary of ACL 2023 Findings on LLMs and Evaluations

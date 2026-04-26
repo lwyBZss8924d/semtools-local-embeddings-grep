@@ -309,22 +309,22 @@ Without `search`:
 ⏺ Let me also search for related terminology variations and get a
    count by month to track the evolution:
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv
+⏺ Bash(find benchmarks/arxiv/arxiv
       _dataset_1000_papers/by_date/2025-05 -name "*.txt" -exec
       grep -l -i "large language model" {} \; | wc…)
   ⎿  36
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv
+⏺ Bash(find benchmarks/arxiv/arxiv
       _dataset_1000_papers/by_date/2025-06 -name "*.txt" -exec
       grep -l -i "large language model" {} \; | wc…)
   ⎿  133
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv
+⏺ Bash(find benchmarks/arxiv/arxiv
       _dataset_1000_papers/by_date/2025-07 -name "*.txt" -exec
       grep -l -i "large language model" {} \; | wc…)
   ⎿  137
 
-⏺ Bash(find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv
+⏺ Bash(find benchmarks/arxiv/arxiv
       _dataset_1000_papers/by_date/2025-08 -name "*.txt" -exec
       grep -l -i "large language model" {} \; | wc…)
   ⎿  167
@@ -341,7 +341,7 @@ Without `search`:
      ☐ Identify emerging trends and contextual changes
 
 ⏺ Bash(for month in 05 06 07 08; do echo "=== 2025-$month ===";
-      find /Users/loganmarkewich/semtools/benchmarks/arxiv/arxiv_
+      find benchmarks/arxiv/arxiv_
       dataset_1000_papers/by_date/2025-$month -nam…)
   ⎿  === 2025-05 ===              
      Total papers: 63

@@ -113,7 +113,7 @@ semtools workspace use my-workspace
 > Workspace 'my-workspace' configured.
 > To activate it, run:
 >   export SEMTOOLS_WORKSPACE=my-workspace
-> 
+>
 > Or add this to your shell profile (.bashrc, .zshrc, etc.)
 
 # Activate the workspace
@@ -141,7 +141,7 @@ semtools parse *.pdf | xargs semtools search "financial projections" --n-lines 3
 semtools parse *.pdf | xargs semtools search "balance sheet" --n-lines 3
 
 # option b - run search directly over the parse cache
-xargs semtools search "balance sheet" /Users/jerryliu/.parse/*.pdf.md --n-lines 3  
+xargs semtools search "balance sheet" ~/.parse/*.pdf.md --n-lines 3
 
 # If documents are removed, you can run prune to clean up stale files
 semtools workspace prune
@@ -149,7 +149,7 @@ semtools workspace prune
 # You can see the stats of a workspace at any time
 semtools workspace status
 > Active workspace: arxiv
-> Root: /Users/loganmarkewich/.semtools/workspaces/arxiv
+> Root: ~/.semtools/workspaces/arxiv
 > Documents: 3000
 > Index: Yes (IVF_PQ)
 ```
@@ -166,6 +166,6 @@ semtools workspace status
 - By default the tokenizer for `search` is case sensitive, which may lead to unexpected results if you don't know capitalization beforehand. You should generally TRY to set `--ignore-case` for more general case insensitive search.
 - `--n-lines` on search controls how much context is shown around matching lines in the results
 - If `--n-lines` returns incomplete results, you may want to consider expanding `--n-lines`.
-- NOTE: by default --n-lines is too small. Consider setting n-lines to 30-50 at least always. 
+- NOTE: by default --n-lines is too small. Consider setting n-lines to 30-50 at least always.
 - `--max-distance` is useful on search for cases where you don't know a top-k value ahead of time and need relevant results from all files
 - That said if setting `--max-distance` doesn't return any results, you may want to try `--top-k` to double-check.

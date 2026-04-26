@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semtools Workspace"
+  short_description: "Manage semtools workspaces"
+  default_prompt: "Use $semtools-workspace to create, inspect, or prune a semtools workspace for this corpus."

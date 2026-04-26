@@ -20,3 +20,9 @@ pub mod search;
 
 #[cfg(feature = "ask")]
 pub mod ask;
+
+#[cfg(feature = "jina")]
+pub mod jina;
+
+#[cfg(feature = "jina")]
+pub mod jina_runtime;

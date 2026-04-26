@@ -1,5 +1,7 @@
 use clap::{Parser, Subcommand};
 use semtools::cmds::ask::ask_cmd;
+#[cfg(feature = "jina")]
+use semtools::cmds::jgrep::{JgrepArgs, jgrep_cmd};
 use semtools::cmds::parse::parse_cmd;
 use semtools::cmds::search::search_cmd;
 use semtools::cmds::workspace::{workspace_prune_cmd, workspace_status_cmd, workspace_use_cmd};
@@ -12,6 +14,8 @@ struct SemtoolsArgs {
 
 #[derive(Subcommand, Debug)]
 enum WorkspaceCommands {
+    /// Initialize or select a workspace (alias of use)
+    Init { name: String },
     /// Use or create a workspace (prints export command to run)
     Use { name: String },
     /// Show active workspace and basic stats
@@ -129,6 +133,9 @@ enum Commands {
         #[command(subcommand)]
         command: WorkspaceCommands,
     },
+    #[cfg(feature = "jina")]
+    /// High-quality local Jina semantic grep and code search
+    Jgrep(JgrepArgs),
 }
 
 #[tokio::main]
@@ -190,6 +197,9 @@ async fn main() -> anyhow::Result<()> {
             .await?;
         }
         Commands::Workspace { json, command } => match command {
+            WorkspaceCommands::Init { name } => {
+                workspace_use_cmd(name, json).await?;
+            }
             WorkspaceCommands::Use { name } => {
                 workspace_use_cmd(name, json).await?;
             }
@@ -200,6 +210,13 @@ async fn main() -> anyhow::Result<()> {
                 workspace_status_cmd(json, name.as_deref()).await?;
             }
         },
+        #[cfg(feature = "jina")]
+        Commands::Jgrep(args) => {
+            if let Err(err) = jgrep_cmd(args).await {
+                eprintln!("Error: {err}");
+                std::process::exit(2);
+            }
+        }
     }
 
     Ok(())

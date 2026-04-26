@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semtools CLI Workflows"
+  short_description: "Discover semtools workflow skills"
+  default_prompt: "Use $semtools-skills-collection to choose the right semtools workflow skill for this task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semtools Search"
+  short_description: "Run local semantic search with semtools"
+  default_prompt: "Use $semtools-search to run semtools semantic search over local files or parsed markdown."

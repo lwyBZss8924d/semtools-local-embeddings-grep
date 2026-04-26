@@ -8,12 +8,14 @@ A high-performance CLI tool for document processing and semantic search, built w
 - **`semtools search`** - Local semantic keyword search using multilingual embeddings with cosine similarity matching and per-line context matching
 - **`semtools ask`** - AI agent with search and read tools for answering questions over document collections (defaults to OpenAI, but see the [config section](#configuration) to learn more about connecting to any OpenAI-Compatible API)
 - **`semtools workspace`** - Workspace management for accelerating search over large collections
+- **`semtools jgrep`** - Fork-local Rust-native Jina semantic grep, classification, stdin reranking, and workspace-backed profile search
 
 **NOTE:** By default, `parse` uses LlamaParse as a backend. Get your API key today for free at [https://cloud.llamaindex.ai](https://cloud.llamaindex.ai). `search` and `workspace` remain local-only. `ask` requires an OpenAI API key.
 
 ## Key Features
 
 - **Fast semantic search** using model2vec embeddings from [minishlab/potion-multilingual-128M](https://huggingface.co/minishlab/potion-multilingual-128M)
+- **Local Jina semantic grep** in this fork through `semtools jgrep`, including recursive code/text search, classification labels, stdin reranking, JSON output, workspace profiles, and optional daemon-backed embedding
 - **Reliable document parsing** with caching and error handling  
 - **Unix-friendly** design with proper stdin/stdout handling
 - **Configurable** distance thresholds and returned chunk sizes
@@ -48,6 +50,25 @@ cargo install semtools --no-default-features --features=parse
 
 Note: Installing from npm builds the Rust binaries locally during install if a prebuilt binary is not available, which requires Rust and Cargo to be available in your environment. Install from `rustup` if needed: `https://www.rust-lang.org/tools/install`.
 
+### Local Fork Installation
+
+This repository is also maintained as a local enhanced fork. On this workstation, the active `semtools` command is expected to be installed from this source tree:
+
+```bash
+cargo install --path /Users/arthur/dev-space/semtools --force
+```
+
+That local-source install is distinct from the upstream npm or crates.io package. The fork adds the `semtools jgrep` subcommand, which provides the local `jina-grep` / `jina-semsearch` style surface as a semtools subcommand rather than as separate PATH-default binaries.
+
+Verify the active enhanced binary with:
+
+```bash
+which semtools
+cargo install --list | grep -A1 '^semtools '
+semtools jgrep --help
+semtools jgrep --models-status --json
+```
+
 ## Quick Start
 
 Basic Usage:
@@ -73,6 +94,23 @@ semtools parse research_papers/*.pdf | xargs ask "Summarize the key methodologie
 
 # Ask based on stdin content
 cat README.md | semtools ask "How do I install SemTools?"
+```
+
+Local fork Jina usage:
+
+```bash
+# Semantic grep over Rust code
+semtools jgrep "retry backoff timeout" src --recursive --include '*.rs' --top-k 8 --json
+
+# Rerank piped candidates
+printf '%s\n' "token refresh logic" "database migration runner" | semtools jgrep "OAuth token refresh" --top-k 1 --json
+
+# Classify files against labels
+semtools jgrep --classify -e bug -e feature -e docs ./issues/*.txt --json
+
+# Build and query a Jina workspace profile
+semtools jgrep --workspace semtools --profile code --sync README.md src --recursive --include '*.rs' --json
+semtools jgrep --workspace semtools --profile code "Jina workspace profile search" --top-k 8 --json
 ```
 
 Advanced Usage:
@@ -177,6 +215,41 @@ Commands:
 Options:
   -j, --json  Output results in JSON format
   -h, --help  Print help
+```
+
+```bash
+$ semtools jgrep --help
+High-quality local Jina semantic grep and code search
+
+Usage: semtools jgrep [OPTIONS] [PATTERN] [FILES]...
+
+Common options:
+  -r, --recursive             Recursive directory search
+      --include <GLOB>        Search only files matching GLOB
+      --exclude <GLOB>        Skip files matching GLOB
+      --exclude-dir <GLOB>    Skip directories matching GLOB
+  -A, --after-context <N>     Lines after match
+  -B, --before-context <N>    Lines before match
+  -C, --context <N>           Lines before and after match
+      --threshold <D>         Similarity threshold
+      --top-k <K>             Max results
+  -e, --regexp <LABEL>        Classification label
+      --classify              Force classification mode
+  -f, --file <LABEL_FILE>     Read classification labels from file
+      --model <MODEL>         Jina model name
+      --task <TASK>           Embedding task
+      --truncate-dim <DIM>    Matryoshka output dimension
+      --fast                  Use a lower Matryoshka dimension
+      --model-dir <DIR>       Local model directory
+  -w, --workspace <NAME>      Use a semtools workspace
+      --profile <ID>          Jina workspace profile id
+      --sync                  Sync/index files into the profile
+  -j, --json                  Output JSON
+      --models-status         Print local model status
+      --daemon-start          Start the Rust-native jgrep daemon
+      --daemon-status         Print daemon status
+      --daemon-stop           Stop the daemon
+      --daemon                Use daemon-backed embedding calls
 ```
 
 ```bash
@@ -293,6 +366,8 @@ semtools ask "What is this about?" docs/*.txt --model gpt-4o --api-key sk-...
 
 - [Using Semtools with Coding Agents](examples/use_with_coding_agents.md)
 - [Using Semtools with MCP](examples/use_with_mcp.md)
+- [Fork-local Jina semantic grep](docs/jina-jgrep.md)
+- [Repository-owned semtools AIHT skills](skills/README.md)
 
 ## Future Work
 

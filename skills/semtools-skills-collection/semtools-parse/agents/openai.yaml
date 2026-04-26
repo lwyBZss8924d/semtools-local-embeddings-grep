@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semtools Parse"
+  short_description: "Parse binary docs for semtools retrieval"
+  default_prompt: "Use $semtools-parse to parse binary documents into markdown for semtools workflows."

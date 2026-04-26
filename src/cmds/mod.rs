@@ -9,3 +9,6 @@ pub mod search;
 
 #[cfg(feature = "workspace")]
 pub mod workspace;
+
+#[cfg(feature = "jina")]
+pub mod jgrep;

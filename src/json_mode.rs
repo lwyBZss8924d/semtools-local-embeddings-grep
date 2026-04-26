@@ -29,6 +29,37 @@ pub struct SearchOutput {
     pub results: Vec<SearchResultJSON>,
 }
 
+// Jina grep
+#[derive(Debug, Serialize)]
+pub struct JgrepLabelScoreJSON {
+    pub label: String,
+    pub score: f32,
+}
+
+#[derive(Debug, Serialize)]
+pub struct JgrepResultJSON {
+    pub path: Option<String>,
+    pub line_number: Option<usize>,
+    pub score: f32,
+    pub distance: f32,
+    pub text: String,
+    pub original_line: Option<String>,
+    pub context_before: Vec<String>,
+    pub context_after: Vec<String>,
+    pub label: Option<String>,
+    pub label_scores: Vec<JgrepLabelScoreJSON>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct JgrepOutput {
+    pub r#type: String,
+    pub backend: String,
+    pub mode: String,
+    pub model: String,
+    pub task: String,
+    pub results: Vec<JgrepResultJSON>,
+}
+
 // Ask
 #[derive(Debug, Serialize)]
 pub struct AskOutput {

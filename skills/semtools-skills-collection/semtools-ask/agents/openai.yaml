@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semtools Ask"
+  short_description: "Ask questions over local corpora"
+  default_prompt: "Use $semtools-ask to answer a question over a local semtools corpus."

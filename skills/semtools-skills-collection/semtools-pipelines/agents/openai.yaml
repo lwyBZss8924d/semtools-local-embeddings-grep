@@ -1,0 +1,4 @@
+interface:
+  display_name: "Semtools Pipelines"
+  short_description: "Run end-to-end semtools pipelines"
+  default_prompt: "Use $semtools-pipelines to choose an end-to-end semtools pipeline for this task."
